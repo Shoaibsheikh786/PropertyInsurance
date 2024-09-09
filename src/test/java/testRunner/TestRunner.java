@@ -13,7 +13,7 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
 	    
 
-		features= {"./src/test/resources/Features/property.feature"},
+		features= {"./src/test/resources/Features/quote.feature"},
 		glue= {"applicationHooks","stepDefination"},
 		tags="@sowjanya"
 		//plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}

@@ -19,29 +19,29 @@ public class QuotePage {
 		PageFactory.initElements(driver, this); 
 	}
 
-	@FindBy(xpath = "//*[@id=\"menu-\"]/div[3]/ul/li[1]")
+	@FindBy(xpath = "//div[text()='1 Years']]")
 	WebElement firstOne;
 	@FindBy(id = "demo-simple-select")
-	WebElement selectyear;
+	WebElement selectyear1;
 
-	public void clickselectyear() {
+	public void clickselectyear1() {
 		try {
 			Thread.sleep(1000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		selectyear.click();
+		selectyear1.click();
 		firstOne.click();
 	}
 	
 	
-	@FindBy(xpath = "//*[@id=\"demo-simple-select\"]")
+	@FindBy(xpath = "//div[text()='2 years']")
 	WebElement secondOne;
 	@FindBy(id = "demo-simple-select")
 	WebElement select2year;
 
-	public void clickselect1year() {
+	public void clickselectyear2() {
 		try {
 			Thread.sleep(1000);
 		} catch (InterruptedException e) {
@@ -51,6 +51,57 @@ public class QuotePage {
 		select2year.click();
 		secondOne.click();
 	}
+	
+	@FindBy(xpath = "//div[text()='3 years']")
+	WebElement thirdOne;
+	@FindBy(id = "demo-simple-select")
+	WebElement select3year;
+	
+	public void clickselectyear3() {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			
+			e.printStackTrace();
+		}
+		select3year.click();
+		thirdOne.click();
+	}
+	
+	@FindBy(xpath = "//div[text()='4 years']")
+	WebElement fourOne;
+	@FindBy(id = "demo-simple-select")
+	WebElement selectyear4;
+
+	public void clickselectyear4() {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		selectyear4.click();
+		fourOne.click();
+	}
+	
+	@FindBy(xpath = "//div[text()='5 years']")
+	WebElement fiveOne;
+	@FindBy(id = "demo-simple-select")
+	WebElement selectyear5;
+
+	public void clickselectyear5() {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		selectyear5.click();
+		fiveOne.click();
+	}
+	
+	
+	
 
 	@FindBy(xpath = "//button[@class='btn btn-primary rounded buy shadow fw-bold']")
 	WebElement taxes;

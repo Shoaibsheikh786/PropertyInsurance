@@ -13,9 +13,10 @@ public class Quote {
 	public Quote() {
 		qp = new QuotePage(DriverFactory.getDriver());
 	}
+	
 	@And("user  can click on select year option")
 	public void user_can_click_on_select_year_option() {
-		qp.clickselectyear();
+		qp.clickselectyear1();
 	}
 
 	@Then("user can  verify the inclusive of all taxes")
