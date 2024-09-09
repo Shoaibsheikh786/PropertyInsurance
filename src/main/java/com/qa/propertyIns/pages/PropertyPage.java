@@ -16,6 +16,18 @@ public class PropertyPage {
 	}
 
 	
+	
+	@FindBy(xpath="//button[text()='  Get new policy']")
+	WebElement GetNewpolicyButton;
+	
+	
+	public void GetNewpolicyButton()
+	{
+		EleInt.click(GetNewpolicyButton);
+		
+	}
+	
+	
 	@FindBy(xpath="//a[@href='/property']")
 	WebElement propertyinsurance;
 
@@ -124,8 +136,7 @@ public class PropertyPage {
 		EleInt.click(CallusButton);
 	}
 	
-//	@FindBy(id = "demo-simple-select")
-//	WebElement selectpremiumyear;
+
 	
 	@FindBy(xpath = "//*[@id=\"menu-\"]/div[3]/ul/li[1]")
 	WebElement selectyear;

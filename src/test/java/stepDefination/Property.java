@@ -19,21 +19,31 @@ public class Property {
 		ProPage=new PropertyPage(DriverFactory.getDriver());
 	}
 	
-
 	//@parushuram
-	
+	@Given("user click on getnewpolicy button")
+	public void user_click_on_getnewpolicy_button() {
+	    ProPage.GetNewpolicyButton();
+	}
 
 	@Given("user click on propertyinsurance button")
 	public void user_click_on_propertyinsurance_button() {
 		ProPage.propertyinsurancebutton();
 	}
-
-	@When("user enters valid Current Market Value {string}")
+	
+	@Given("user enters valid current market Value {string}")
 	public void user_enters_valid_current_market_value(String string) {
 		boolean b=ProPage.marketvalueTextbox(string);
-		  Assert.assertTrue(b);
-		  System.out.println("market value displayed");
+		Assert.assertTrue(b);
+	  System.out.println("market value displayed");
+	    
 	}
+
+//	@When("user enters valid Current Market Value {string}")
+//	public void user_enters_valid_current_market_value(String string) {
+//		boolean b=ProPage.marketvalueTextbox(string);
+//		  Assert.assertTrue(b);
+//		  System.out.println("market value displayed");
+//	}
 	
 
 	@When("user enters valid square feet value {string}")
@@ -90,17 +100,7 @@ public class Property {
 	
 	
 	
-//	@When("User can select premium year from dropdown")
-//	public void user_can_select_premium_year_from_dropdown() {
-//		ProPage.selectpremiumyear();
-//	}
-//
-//	
-//
-//	@When("click on the buynow option")
-//	public void click_on_the_buynow_option() {
-//		ProPage.buynowbutton();
-//	}
+
 
 
 }
