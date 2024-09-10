@@ -14,9 +14,8 @@ import io.cucumber.junit.CucumberOptions;
 	    
 
 		features= {"./src/test/resources/Features/quote.feature"},
-		glue= {"applicationHooks","stepDefination"},
-		tags="@sowjanya"
-		//plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
+		glue= {"applicationHooks","stepDefination"}
+    	//plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
 //		plugin = {"html:./myReports.html"}
 	)
 public class TestRunner {

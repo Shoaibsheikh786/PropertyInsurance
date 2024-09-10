@@ -19,10 +19,11 @@ public class QuotePage {
 		PageFactory.initElements(driver, this); 
 	}
 
-	@FindBy(xpath = "//div[text()='1 Years']]")
+
+	@FindBy(xpath = "//*[@id=\"menu-\"]/div[3]/ul/li[1]")
 	WebElement firstOne;
 	@FindBy(id = "demo-simple-select")
-	WebElement selectyear1;
+	WebElement selectyear;
 
 	public void clickselectyear1() {
 		try {
@@ -31,28 +32,22 @@ public class QuotePage {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		selectyear1.click();
+		selectyear.click();
 		firstOne.click();
 	}
 	
-	
-	@FindBy(xpath = "//div[text()='2 years']")
+	@FindBy(xpath = "//li[@data-value='2']")
 	WebElement secondOne;
 	@FindBy(id = "demo-simple-select")
 	WebElement select2year;
 
 	public void clickselectyear2() {
-		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			
-			e.printStackTrace();
-		}
 		select2year.click();
+		ExpWait.waitForElementToBeClickable(DriverFactory.getDriver(), secondOne, 5);
 		secondOne.click();
 	}
 	
-	@FindBy(xpath = "//div[text()='3 years']")
+	@FindBy(xpath = "//li[@data-value='3']")
 	WebElement thirdOne;
 	@FindBy(id = "demo-simple-select")
 	WebElement select3year;
@@ -68,7 +63,7 @@ public class QuotePage {
 		thirdOne.click();
 	}
 	
-	@FindBy(xpath = "//div[text()='4 years']")
+	@FindBy(xpath = "//li[@data-value='4']")
 	WebElement fourOne;
 	@FindBy(id = "demo-simple-select")
 	WebElement selectyear4;
@@ -84,7 +79,7 @@ public class QuotePage {
 		fourOne.click();
 	}
 	
-	@FindBy(xpath = "//div[text()='5 years']")
+	@FindBy(xpath = "//li[@data-value='5']")
 	WebElement fiveOne;
 	@FindBy(id = "demo-simple-select")
 	WebElement selectyear5;
