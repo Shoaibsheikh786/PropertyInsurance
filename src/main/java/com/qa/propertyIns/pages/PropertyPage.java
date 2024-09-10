@@ -15,6 +15,21 @@ public class PropertyPage {
 		PageFactory.initElements(driver,this);
 	}
 
+
+	
+	
+	@FindBy(xpath="//button[text()='  Get new policy']")
+	WebElement GetNewpolicyButton;
+	
+	
+	public void GetNewpolicyButton()
+	{
+		EleInt.click(GetNewpolicyButton);
+		
+	}
+	
+	
+
 	@FindBy(xpath="//a[@href='/property']")
 	WebElement propertyinsurance;
 
@@ -123,6 +138,7 @@ public class PropertyPage {
 		EleInt.click(CallusButton);
 	}
 	
+
 //	@FindBy(id = "demo-simple-select")
 //	WebElement selectpremiumyear;
 //	
@@ -244,5 +260,44 @@ public class PropertyPage {
 //		ViewQuotes.click();
 //	}
 //	
+
+
+	
+	@FindBy(xpath = "//*[@id=\"menu-\"]/div[3]/ul/li[1]")
+	WebElement selectyear;
+	@FindBy(id = "demo-simple-select")
+	WebElement selectpremiumyear;
+
+	public void selectpremiumyear()	
+	{
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		EleInt.click(selectpremiumyear);
+		//Dd.selectByIndex(selectpremiumyear, 1);
+		//Dd.selectByIndex(selectpremiumyear, 2);
+		EleInt.click(selectyear);
+		
+	}
+	
+	@FindBy(xpath="//button[@class='btn btn-primary rounded buy shadow fw-bold']")
+	WebElement buynowbutton;
+	
+	public void buynowbutton()
+	{
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		EleInt.click(buynowbutton);
+	}
+	
+	
+
 
 }
