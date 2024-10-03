@@ -9,12 +9,15 @@ Then enter the otp "EleInt.getText(verifyotp)"
 Then Click on login button
 And Click on my account
 Then click on property insurance
+
+
 @Parushuram
 Scenario: User can verify the property page
 Given user click on propertyinsurance button
 And user enters valid Current Market Value "100003"
 
 
+@test1
 Scenario: To verify the view quote page 
 Given user click on getnewpolicy button
 And user enters valid current market Value "100003"

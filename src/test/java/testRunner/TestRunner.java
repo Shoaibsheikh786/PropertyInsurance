@@ -13,7 +13,7 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
 	    
 
-		features= {"./src/test/resources/Features/quote.feature"},
+		features= {"./src/test/resources/Features/customerDetails.feature"},
 		glue= {"applicationHooks","stepDefination"}
     	//plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
 //		plugin = {"html:./myReports.html"}
@@ -21,6 +21,6 @@ import io.cucumber.junit.CucumberOptions;
 public class TestRunner {
 	
 	
-	
+	     
 
 }

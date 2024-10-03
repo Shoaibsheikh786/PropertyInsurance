@@ -1,15 +1,21 @@
 package com.qa.propertyIns.pages;
 
+import java.time.Duration;
+
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.qa.propertyIns.driverfactory.DriverFactory;
 import com.qa.propertyIns.utils.Dd;
 import com.qa.propertyIns.utils.EleInt;
+import com.qa.propertyIns.utils.ExpWait;
+import com.qa.propertyIns.utils.JSEUtility;
 
 public class PropertyPage {
-	
+	WebDriver driver;
 	public PropertyPage(WebDriver driver)
 	{
 		PageFactory.initElements(driver,this);
@@ -78,7 +84,7 @@ public class PropertyPage {
 	@FindBy(xpath="//select[@id='age']")
 	WebElement ageofbuilding;
 	
-	public boolean selectageofbuilding(String string) 
+	public boolean selectageofbuilding() 
 	{
 		
 		Dd.selectByIndex(ageofbuilding, 1);
@@ -90,7 +96,7 @@ public class PropertyPage {
 	@FindBy(xpath="//select[@id='effect']")
 	WebElement Effectedflood;
 	
-	public boolean Effectedflood(String string)
+	public boolean Effectedflood()
 	{
 		
 		Dd.selectByIndex(Effectedflood, 2);
@@ -102,7 +108,7 @@ public class PropertyPage {
 	@FindBy(xpath="//select[@id='security']")
 	WebElement SecurityDropdown;
 	
-	public boolean SecurityDropdown(String string)
+	public boolean SecurityDropdown()
 	{
 		Dd.selectByIndex(SecurityDropdown, 1);
 		boolean g=EleInt.isDisplayed(SecurityDropdown);
@@ -113,11 +119,14 @@ public class PropertyPage {
 	@FindBy(xpath="//select[@id='person']")
 	WebElement SalriedoptionDd;
 	
-	public boolean SalriedoptionDd(String string)
+	public boolean SalriedoptionDd()
 	{
-		
+		System.out.println("Salired option being called");
 		Dd.selectByIndex(SalriedoptionDd, 1);
 		boolean h=EleInt.isDisplayed(SalriedoptionDd);
+	//	ExpWait.waitForElementToBeClickable(driver, ViewQuotesbutton, 5);
+		System.out.println("Element Found");
+	//	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		return h;
 			
 	}
@@ -125,9 +134,21 @@ public class PropertyPage {
 	@FindBy(xpath="//button[text()=' View Quotes ']")
 	WebElement ViewQuotesbutton;
 	
-	public void Viewquotes()
-	{
-		EleInt.click(ViewQuotesbutton);	
+	public void Viewquotes() 
+	{   
+		try {
+			Thread.sleep(4000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		JavascriptExecutor js=(JavascriptExecutor) DriverFactory.getDriver();
+		js.executeScript("window.scrollTo(0,1000);");
+        
+		System.out.println("hello ----------------->");
+		ExpWait.waitForElementToBeClickable(driver, ViewQuotesbutton, 5);
+		EleInt.click(ViewQuotesbutton);
+		
 	}
 	
 	@FindBy(xpath="(//button[@type=\"button\"])[1]")

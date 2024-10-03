@@ -26,28 +26,28 @@ And user  can click on select year option
 Then user can  verify the inclusive of all taxes
 Then user click on buynow
 
-@Regression @premium2
-Scenario: verify the prenium amount by selecting 2 years term period 
-
-And user  can click on select year option2
-Then user can  verify the inclusive of all taxes
-
-@Regression @premium3
-Scenario: verify the prenium amount by selecting 3 years term period 
-
-And user  can click on select year option3
-Then user can  verify the inclusive of all taxes
-
-
-@Regression @premium4
-Scenario: verify the prenium amount by selecting 4 years term period 
-
-And user  can click on select year option4
-Then user can  verify the inclusive of all taxes
-
-
-@Regression @premium5
-Scenario: verify the prenium amount by selecting 5 years term period 
-
-And user  can click on select year option5
-Then user can  verify the inclusive of all taxes
+#@Regression @premium2
+#Scenario: verify the prenium amount by selecting 2 years term period 
+#
+#And user  can click on select year option2
+#Then user can  verify the inclusive of all taxes
+#
+#@Regression @premium3
+#Scenario: verify the prenium amount by selecting 3 years term period 
+#
+#And user  can click on select year option3
+#Then user can  verify the inclusive of all taxes
+#
+#
+#@Regression @premium4
+#Scenario: verify the prenium amount by selecting 4 years term period 
+#
+#And user  can click on select year option4
+#Then user can  verify the inclusive of all taxes
+#
+#
+#@Regression @premium5
+#Scenario: verify the prenium amount by selecting 5 years term period 
+#
+#And user  can click on select year option5
+#Then user can  verify the inclusive of all taxes

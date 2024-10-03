@@ -4,8 +4,12 @@ import org.junit.Assert;
 
 import com.qa.propertyIns.driverfactory.DriverFactory;
 import com.qa.propertyIns.pages.PropertyPage;
+import com.qa.propertyIns.utils.ExpWait;
+import com.qa.propertyIns.utils.JSEUtility;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class Property {
@@ -28,8 +32,8 @@ public class Property {
 		ProPage.propertyinsurancebutton();
 	}
 	
-	@Given("user enters valid current market Value {string}")
-	public void user_enters_valid_current_market_value(String string) {
+	@Given("user  enters valid current market Value {string}")
+	public void user_enters_valid_current_market_Value(String string) {
 		boolean b=ProPage.marketvalueTextbox(string);
 		Assert.assertTrue(b);
 	  System.out.println("market value displayed");
@@ -44,54 +48,66 @@ public class Property {
 //	}
 	
 
-	@When("user enters valid square feet value {string}")
+	@When("user can  enters valid square feet value {string}")
 	public void user_enters_valid_square_feet_value(String string) {
 		boolean c=ProPage.carpetArea(string);
 		  Assert.assertTrue(c);
 		  System.out.println("market value displayed");
 	}
 	
-	@When("user enters a valid digit Pincode {string}")
-	public void user_enters_a_valid_digit_pincode(String string) {
+	@When("user can  enters a valid Pincode {string}")
+	public void user_enters_a_valid_Pincode(String string) {
 		boolean d=ProPage.pincode(string);
 		Assert.assertTrue(d);
 		System.out.println("pincode displayed");
 	}
 	
-	@When("user is select Age Of The Building {string}")
-	public void user_is_select_age_of_the_building(String string) {
-		boolean e= ProPage.selectageofbuilding(string);
+	@And("user  is select Age Of The Building")
+	public void user_is_select_Age_Of_The_Building() {
+		boolean e= ProPage.selectageofbuilding();
 		   Assert.assertTrue(e);
 		   System.out.println("age of buliding");
 	}
 	
 	
-	@When("user is select the Flood option {string}")
-	public void user_is_select_the_flood_option(String string) {
-		boolean f=ProPage.Effectedflood(string);
+	@And("user is select the Floods options")
+	public void user_is_select_the_Floods_options() {
+		boolean f=ProPage.Effectedflood();
 		   Assert.assertTrue(f);
 		   System.out.println("Effected Flood");
 	}
 	
 	
-	@When("user is select the Security option {string}")
-	public void user_is_select_the_security_option(String string) {
-		 boolean g=ProPage.SecurityDropdown(string);
+	@And("User is select No Security options")
+	public void user_is_select_No_Security_options() {
+		 boolean g=ProPage.SecurityDropdown();
 		    Assert.assertTrue(g);
 		    System.out.println("SecurityDropdown");
 	}
 	
 
-	@When("user is select the Salary option {string}")
-	public void user_is_select_the_salary_option(String string) {
-		boolean h=ProPage.SalriedoptionDd(string);
+	@And("user is select the Salaried options")
+	public void user_is_select_the_Salaried_options() {
+		boolean h=ProPage.SalriedoptionDd();
 		Assert.assertTrue(h);
-		System.out.println("SalaryDropdown");
+		System.out.println("SalaryDropdown +++++++++++");
+		
+		try {
+			System.out.println("hello Wait");
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	//	ExpWait.waitForElementToBeClickable(driver, //, 0);
+		
 	}
 	
-	@When("user click on view quotes button")
-	public void user_click_on_view_quotes_button() {
+	@And("user can click on view quotes button")
+	public void user_can_click_on_view_quotes_button() {
+		System.out.println("View Quote button --> click");
 		ProPage.Viewquotes();
+		System.out.println("View Quote button --> After click");
 	}
 
 
